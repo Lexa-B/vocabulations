@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocab Stats</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; }
+        .chart-container { max-width: 1200px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h1 { text-align: center; }
+        .instructions { text-align: center; color: #666; margin-bottom: 20px; }
+        .nav-links { display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+        .nav-links a, .nav-links button { text-decoration: none; font-weight: bold; color: white; padding: 8px 12px; border-radius: 5px; font-size: 0.9em; border: none; cursor: pointer; }
+        .nav-links a, #reset-zoom-btn { background-color: #2196F3; }
+        #reset-stats-btn { background-color: #f44336; } /* Red for a "danger" action */
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+</head>
+<body>
+    <div class="chart-container">
+        <h1>Vocabulary Performance</h1>
+        <p class="instructions">Pinch or scroll wheel to zoom. Drag to pan.</p>
+        <div class="nav-links">
+            <a href="index.html">← Back to Practice</a>
+            <button id="reset-zoom-btn">Reset Zoom</button>
+            <button id="reset-stats-btn">Reset All Stats</button>
+        </div>
+        <canvas id="stats-chart"></canvas>
+    </div>
+
+    <script src="stats.js"></script>
+</body>
+</html>

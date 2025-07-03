@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Vocab Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="stats.html" class="stats-link">View Stats</a>
+    <div class="app-container">
+        <div class="controls">
+            <span>English → Japanese</span>
+            <label class="switch">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider"></span>
+            </label>
+            <span>Japanese → English</span>
+        </div>
+        <div class="controls">
+            <span>Random</span>
+            <label class="switch">
+                <input type="checkbox" id="dist-toggle">
+                <span class="slider"></span>
+            </label>
+            <span>Weighted</span>
+        </div>
+
+        <div class="card" id="flashcard">
+            <div class="card-inner">
+                <div class="card-front">
+                    <p id="card-front-text"></p>
+                </div>
+                <div class="card-back">
+                    <h2 id="card-back-title"></h2>
+                    <p id="card-back-desc"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-buttons" id="answer-buttons">
+            <button id="btn-correct">✅ Correct</button>
+            <button id="btn-incorrect">❌ Incorrect</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

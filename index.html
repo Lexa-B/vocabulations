@@ -2,47 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Japanese Vocab Practice</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="stats.html" class="stats-link">View Stats</a>
-    <div class="app-container">
-        <div class="controls">
-            <span>English → Japanese</span>
-            <label class="switch">
-                <input type="checkbox" id="mode-toggle">
-                <span class="slider"></span>
-            </label>
-            <span>Japanese → English</span>
-        </div>
-        <div class="controls">
-            <span>Random</span>
-            <label class="switch">
-                <input type="checkbox" id="dist-toggle">
-                <span class="slider"></span>
-            </label>
-            <span>Weighted</span>
-        </div>
-
-        <div class="card" id="flashcard">
-            <div class="card-inner">
-                <div class="card-front">
-                    <p id="card-front-text"></p>
-                </div>
-                <div class="card-back">
-                    <h2 id="card-back-title"></h2>
-                    <p id="card-back-desc"></p>
-                </div>
+    <div class="card" id="flashcard">
+        <div class="card-inner">
+            <div class="card-front">
+                <p id="card-front-text"></p>
+            </div>
+            <div class="card-back">
+                <h2 id="card-back-title"></h2>
+                <p id="card-back-desc"></p>
             </div>
         </div>
-
-        <div class="answer-buttons" id="answer-buttons">
-            <button id="btn-correct">✅ Correct</button>
-            <button id="btn-incorrect">❌ Incorrect</button>
-        </div>
     </div>
+
+    <div class="settings-hint" id="settings-hint">Hold for settings</div>
+
+    <button class="settings-btn" id="settings-btn" aria-label="Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+        </svg>
+    </button>
+
+    <div class="settings-modal" id="settings-modal">
+        <h3>Settings</h3>
+        <div class="setting-group">
+            <span class="setting-label">Theme</span>
+            <div class="theme-selector">
+                <button class="theme-btn" data-theme="light">Light</button>
+                <button class="theme-btn" data-theme="dark">Dark</button>
+                <button class="theme-btn" data-theme="paper">Paper</button>
+                <button class="theme-btn" data-theme="ocean">Ocean</button>
+            </div>
+        </div>
+        <label class="setting-row">
+            <input type="checkbox" id="mode-toggle">
+            <span>English → Japanese</span>
+        </label>
+        <label class="setting-row">
+            <input type="checkbox" id="dist-toggle" checked>
+            <span>Prioritize weak words</span>
+        </label>
+        <a href="stats.html" class="settings-link">View Statistics</a>
+        <button id="close-settings">Done</button>
+    </div>
+
+    <div class="feedback-flash" id="feedback-flash"></div>
+
+    <div class="answer-hints" id="answer-hints">
+        <button class="answer-hint incorrect" id="btn-incorrect" aria-label="Incorrect">
+            <span class="hint-arrow">&larr;</span>
+            <span class="hint-label">Wrong</span>
+        </button>
+        <button class="answer-hint correct" id="btn-correct" aria-label="Correct">
+            <span class="hint-label">Right</span>
+            <span class="hint-arrow">&rarr;</span>
+        </button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

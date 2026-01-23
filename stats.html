@@ -4,29 +4,314 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vocab Stats</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; }
-        .chart-container { max-width: 1200px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        h1 { text-align: center; }
-        .instructions { text-align: center; color: #666; margin-bottom: 20px; }
-        .nav-links { display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
-        .nav-links a, .nav-links button { text-decoration: none; font-weight: bold; color: white; padding: 8px 12px; border-radius: 5px; font-size: 0.9em; border: none; cursor: pointer; }
-        .nav-links a, #reset-zoom-btn { background-color: #2196F3; }
-        #reset-stats-btn { background-color: #f44336; } /* Red for a "danger" action */
-    </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .header h1 { margin: 0; }
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .header-buttons a, .header-buttons button {
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            border: none;
+            cursor: pointer;
+        }
+        .header-buttons a { background-color: #2196F3; }
+        #reset-stats-btn { background-color: #f44336; }
+
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .summary-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .summary-card .big-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+        }
+        .summary-card .label {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .streak-fire { color: #ff6b35; }
+
+        /* Main content grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .content-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 500px) {
+            body { padding: 12px; }
+            .header { flex-direction: column; align-items: flex-start; }
+            .header h1 { font-size: 1.4em; }
+            .header-buttons { width: 100%; }
+            .header-buttons a, .header-buttons button { flex: 1; text-align: center; padding: 10px 8px; font-size: 0.8em; }
+            .summary-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .summary-card { padding: 15px 10px; }
+            .summary-card .big-number { font-size: 1.8em; }
+            .card { padding: 15px; }
+            .card h2 { font-size: 1em; }
+            .problem-table { font-size: 0.8em; }
+            .problem-table th, .problem-table td { padding: 6px 4px; }
+            .problem-table th:nth-child(3), .problem-table td:nth-child(3) { min-width: 80px; }
+            .filter-controls { flex-direction: column; }
+            .filter-controls select, .filter-controls input { width: 100%; }
+            .full-list-card { padding: 15px; }
+            #full-table th:nth-child(4), #full-table td:nth-child(4),
+            #full-table th:nth-child(5), #full-table td:nth-child(5) { display: none; }
+            .tier-legend { font-size: 0.75em; gap: 6px; }
+            .accuracy-bar { width: 40px; }
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        /* Mastery Tiers */
+        .tier-chart-container {
+            position: relative;
+            height: 220px;
+        }
+        .tier-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+        .tier-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.85em;
+        }
+        .tier-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        /* Problem Words Table */
+        .problem-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+        .problem-table th {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 2px solid #eee;
+            cursor: pointer;
+            user-select: none;
+        }
+        .problem-table th:hover { background: #f5f5f5; }
+        .problem-table td {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .problem-table tr:hover { background: #f9f9f9; }
+        .accuracy-bar {
+            width: 60px;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .accuracy-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+        }
+        .accuracy-low { background: #f44336; }
+        .accuracy-med { background: #ff9800; }
+        .accuracy-high { background: #4caf50; }
+
+        /* Progress Over Time */
+        .progress-chart-container {
+            height: 200px;
+        }
+        .no-data-msg {
+            text-align: center;
+            color: #999;
+            padding: 40px;
+        }
+
+        /* Full word list */
+        .full-list-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .filter-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .filter-controls select, .filter-controls input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        .filter-controls input { flex: 1; min-width: 150px; }
+        .word-count {
+            color: #666;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div class="chart-container">
-        <h1>Vocabulary Performance</h1>
-        <p class="instructions">Pinch or scroll wheel to zoom. Drag to pan.</p>
-        <div class="nav-links">
-            <a href="index.html">← Back to Practice</a>
-            <button id="reset-zoom-btn">Reset Zoom</button>
-            <button id="reset-stats-btn">Reset All Stats</button>
+    <div class="container">
+        <div class="header">
+            <h1>Vocabulary Stats</h1>
+            <div class="header-buttons">
+                <a href="index.html">Back to Practice</a>
+                <button id="reset-stats-btn">Reset All Stats</button>
+            </div>
         </div>
-        <canvas id="stats-chart"></canvas>
+
+        <!-- Summary Cards -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <span class="big-number" id="overall-accuracy">--</span>
+                <span class="label">Overall Accuracy</span>
+            </div>
+            <div class="summary-card">
+                <span class="big-number" id="words-practiced">--</span>
+                <span class="label">Words Practiced</span>
+            </div>
+            <div class="summary-card">
+                <span class="big-number" id="total-reviews">--</span>
+                <span class="label">Total Reviews</span>
+            </div>
+            <div class="summary-card">
+                <span class="big-number streak-fire" id="streak">--</span>
+                <span class="label">Day Streak</span>
+            </div>
+        </div>
+
+        <!-- Mastery Tiers + Problem Words -->
+        <div class="content-grid">
+            <div class="card">
+                <h2>Mastery Distribution</h2>
+                <div class="tier-chart-container">
+                    <canvas id="tier-chart"></canvas>
+                </div>
+                <div class="tier-legend" id="tier-legend"></div>
+            </div>
+            <div class="card">
+                <h2>Words Needing Practice</h2>
+                <table class="problem-table" id="problem-table">
+                    <thead>
+                        <tr>
+                            <th data-sort="japanese">Japanese</th>
+                            <th data-sort="english">English</th>
+                            <th data-sort="accuracy">Accuracy</th>
+                            <th data-sort="attempts">Tries</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Progress Over Time -->
+        <div class="card" style="margin-bottom: 20px;">
+            <h2>Progress Over Time</h2>
+            <div class="progress-chart-container">
+                <canvas id="progress-chart"></canvas>
+            </div>
+            <div class="no-data-msg" id="no-progress-data" style="display: none;">
+                Practice more to see your progress over time!
+            </div>
+        </div>
+
+        <!-- Full Word List -->
+        <div class="full-list-card">
+            <h2>All Words</h2>
+            <div class="filter-controls">
+                <select id="tier-filter">
+                    <option value="all">All Tiers</option>
+                    <option value="mastered">Mastered</option>
+                    <option value="confident">Confident</option>
+                    <option value="learning">Learning</option>
+                    <option value="struggling">Struggling</option>
+                    <option value="unseen">Not Started</option>
+                </select>
+                <select id="sort-by">
+                    <option value="accuracy-asc">Lowest Accuracy First</option>
+                    <option value="accuracy-desc">Highest Accuracy First</option>
+                    <option value="attempts-desc">Most Practiced</option>
+                    <option value="attempts-asc">Least Practiced</option>
+                    <option value="japanese">Alphabetical (Japanese)</option>
+                </select>
+                <input type="text" id="search-input" placeholder="Search words...">
+            </div>
+            <div class="word-count" id="word-count"></div>
+            <table class="problem-table" id="full-table">
+                <thead>
+                    <tr>
+                        <th>Japanese</th>
+                        <th>English</th>
+                        <th>Accuracy</th>
+                        <th>Attempts</th>
+                        <th>Tier</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
 
     <script src="stats.js"></script>

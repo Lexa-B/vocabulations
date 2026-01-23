@@ -384,6 +384,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let activePointerId = null;
 
     function handlePointerDown(e) {
+        // Skip if touch - handled by touch events
+        if (e.pointerType === 'touch') return;
+
         if (settingsModal.classList.contains('visible')) return;
         if (e.target.closest('#settings-btn')) return;
 
@@ -391,6 +394,9 @@ document.addEventListener('DOMContentLoaded', () => {
         pointerStartX = e.clientX;
         pointerStartY = e.clientY;
         hasMoved = false;
+
+        // Capture pointer to receive events even when finger moves outside card
+        card.setPointerCapture(e.pointerId);
 
         // Long press detection
         longPressTimer = setTimeout(() => {
@@ -408,6 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handlePointerMove(e) {
+        if (e.pointerType === 'touch') return;
         if (e.pointerId !== activePointerId) return;
         if (settingsModal.classList.contains('visible')) return;
 
@@ -434,6 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handlePointerUp(e) {
+        if (e.pointerType === 'touch') return;
         if (e.pointerId !== activePointerId) return;
 
         clearTimeout(longPressTimer);
@@ -468,6 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handlePointerCancel(e) {
+        if (e.pointerType === 'touch') return;
         if (e.pointerId !== activePointerId) return;
         clearTimeout(longPressTimer);
         clearTimeout(hintTimer);
@@ -478,12 +487,80 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Event Listeners ---
 
-    // Pointer events on card (works for mouse and touch)
+    // Touch events (more reliable on mobile)
+    card.addEventListener('touchstart', (e) => {
+        if (settingsModal.classList.contains('visible')) return;
+        if (e.target.closest('#settings-btn')) return;
+
+        const touch = e.touches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+        hasMoved = false;
+
+        longPressTimer = setTimeout(() => {
+            if (!hasMoved) {
+                openSettings();
+            }
+        }, LONG_PRESS_DURATION);
+
+        hintTimer = setTimeout(() => {
+            if (!hasMoved) {
+                settingsHint.classList.add('visible');
+            }
+        }, 400);
+    }, { passive: true });
+
+    card.addEventListener('touchmove', (e) => {
+        if (settingsModal.classList.contains('visible')) return;
+
+        const touch = e.touches[0];
+        const diffX = touch.clientX - touchStartX;
+        const diffY = touch.clientY - touchStartY;
+
+        if (Math.abs(diffX) > 10 || Math.abs(diffY) > 10) {
+            hasMoved = true;
+            clearTimeout(longPressTimer);
+            clearTimeout(hintTimer);
+            settingsHint.classList.remove('visible');
+        }
+
+        // Visual tilt feedback
+        if (Math.abs(diffX) > 20 && Math.abs(diffX) > Math.abs(diffY)) {
+            card.classList.remove('tilting-left', 'tilting-right');
+            card.classList.add(diffX > 0 ? 'tilting-right' : 'tilting-left');
+        }
+    }, { passive: true });
+
+    card.addEventListener('touchend', (e) => {
+        clearTimeout(longPressTimer);
+        clearTimeout(hintTimer);
+        settingsHint.classList.remove('visible');
+        card.classList.remove('tilting-left', 'tilting-right');
+
+        if (settingsModal.classList.contains('visible')) return;
+
+        const touch = e.changedTouches[0];
+        const diffX = touch.clientX - touchStartX;
+
+        // Check for swipe
+        if (Math.abs(diffX) > SWIPE_THRESHOLD && hasMoved) {
+            if (isFlipped) {
+                handleAnswer(diffX > 0);
+            }
+            return;
+        }
+
+        // Not a swipe - treat as tap
+        if (!hasMoved) {
+            handleTap();
+        }
+    });
+
+    // Pointer events (for mouse on desktop)
     card.addEventListener('pointerdown', handlePointerDown);
     card.addEventListener('pointermove', handlePointerMove);
     card.addEventListener('pointerup', handlePointerUp);
     card.addEventListener('pointercancel', handlePointerCancel);
-    card.addEventListener('pointerleave', handlePointerCancel);
 
     // Transition end for card flip
     cardInner.addEventListener('transitionend', () => {

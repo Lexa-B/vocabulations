@@ -3,8 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = document.getElementById('flashcard');
     const cardInner = card.querySelector('.card-inner');
     const cardFrontText = document.getElementById('card-front-text');
+    const cardFrontReading = document.getElementById('card-front-reading');
     const cardBackTitle = document.getElementById('card-back-title');
-    const cardBackDesc = document.getElementById('card-back-desc');
+    const cardBackReading = document.getElementById('card-back-reading');
+    const cardBackPos = document.getElementById('card-back-pos');
+    const cardBackForms = document.getElementById('card-back-forms');
+    const formMasu = document.getElementById('form-masu');
+    const formTe = document.getElementById('form-te');
+    const formNai = document.getElementById('form-nai');
+    const formTa = document.getElementById('form-ta');
+    const cardBackNotes = document.getElementById('card-back-notes');
     const settingsModal = document.getElementById('settings-modal');
     const settingsHint = document.getElementById('settings-hint');
     const feedbackFlash = document.getElementById('feedback-flash');
@@ -12,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const distToggle = document.getElementById('dist-toggle');
     const closeSettings = document.getElementById('close-settings');
     const themeButtons = document.querySelectorAll('.theme-btn');
+    const displayModeButtons = document.querySelectorAll('.display-mode-btn');
     const settingsBtn = document.getElementById('settings-btn');
     const answerHints = document.getElementById('answer-hints');
     const btnCorrect = document.getElementById('btn-correct');
@@ -23,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentCard = null;
     let isFlipped = false;
     let mode = 'ja-en';
+    let displayMode = 'both'; // 'kanji', 'both', or 'hint'
+    let hintRevealed = false;
     let useWeightedDist = true;
     let isLoading = true;
 
@@ -99,8 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const statsJSON = localStorage.getItem('vocabStats');
         stats = statsJSON ? JSON.parse(statsJSON) : {};
         vocabData.forEach(word => {
-            if (word.Japanese && !stats[word.Japanese]) {
-                stats[word.Japanese] = { correct: 0, incorrect: 0 };
+            const key = word.Kanji || word.Japanese; // Support both old and new column names
+            if (key && !stats[key]) {
+                stats[key] = { correct: 0, incorrect: 0 };
             }
         });
     }
@@ -112,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadSettings() {
         const savedMode = localStorage.getItem('vocabMode');
         const savedDist = localStorage.getItem('vocabDist');
+        const savedDisplayMode = localStorage.getItem('vocabDisplayMode');
 
         if (savedMode === 'en-ja') {
             mode = 'en-ja';
@@ -121,11 +134,22 @@ document.addEventListener('DOMContentLoaded', () => {
             useWeightedDist = false;
             distToggle.checked = false;
         }
+        if (savedDisplayMode && ['kanji', 'both', 'hint'].includes(savedDisplayMode)) {
+            displayMode = savedDisplayMode;
+        }
+        updateDisplayModeButtons();
+    }
+
+    function updateDisplayModeButtons() {
+        displayModeButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.display === displayMode);
+        });
     }
 
     function saveSettings() {
         localStorage.setItem('vocabMode', mode);
         localStorage.setItem('vocabDist', useWeightedDist.toString());
+        localStorage.setItem('vocabDisplayMode', displayMode);
     }
 
     // --- Streak & History ---
@@ -177,8 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function getWeightedRandomCard() {
         const weightedPool = [];
         vocabData.forEach(word => {
-            const wordStats = stats[word.Japanese];
-            const weight = 10 + (wordStats.incorrect * 5);
+            const key = word.Kanji || word.Japanese;
+            const wordStats = stats[key];
+            const weight = 10 + ((wordStats?.incorrect || 0) * 5);
             for (let i = 0; i < weight; i++) {
                 weightedPool.push(word);
             }
@@ -189,15 +214,70 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Card Display ---
     function renderCurrentCard() {
         if (!currentCard) return;
+
+        const kanji = currentCard.Kanji || currentCard.Japanese || '';
+        const reading = currentCard['Reading (Kana)'] || '';
+        const english = currentCard.English || '';
+        const pos = currentCard['Part of Speech'] || '';
+        const masu = currentCard['Polite (Masu-form)'] || '';
+        const te = currentCard['Te-form'] || '';
+        const nai = currentCard['Short Negative (Nai)'] || '';
+        const ta = currentCard['Short Past (Ta)'] || '';
+        const notes = currentCard['Usage/Notes'] || currentCard.Description || '';
+
         if (mode === 'ja-en') {
-            cardFrontText.textContent = currentCard.Japanese;
-            cardBackTitle.textContent = currentCard.English;
+            // Front card display based on displayMode
+            if (displayMode === 'kanji') {
+                cardFrontText.textContent = kanji;
+                cardFrontReading.textContent = '';
+                cardFrontReading.classList.remove('visible');
+            } else if (displayMode === 'both') {
+                cardFrontText.textContent = kanji;
+                cardFrontReading.textContent = reading || '';
+                cardFrontReading.classList.add('visible');
+            } else if (displayMode === 'hint') {
+                cardFrontText.textContent = kanji;
+                cardFrontReading.textContent = reading || '';
+                cardFrontReading.classList.remove('visible'); // Hidden until first tap
+            }
+            cardBackTitle.textContent = english;
+            cardBackReading.textContent = reading ? `${kanji} (${reading})` : kanji;
         } else {
-            cardFrontText.textContent = currentCard.English;
-            cardBackTitle.textContent = currentCard.Japanese;
+            // English -> Japanese mode: no reading on front needed
+            cardFrontText.textContent = english;
+            cardFrontReading.textContent = '';
+            cardFrontReading.classList.remove('visible');
+            cardBackTitle.textContent = kanji;
+            cardBackReading.textContent = reading || '';
         }
-        cardBackDesc.textContent = currentCard.Description || '';
-        cardBackDesc.classList.remove('visible');
+
+        // Part of speech with color coding
+        cardBackPos.textContent = pos;
+        const posLower = pos.toLowerCase();
+        if (posLower.includes('verb')) {
+            cardBackPos.dataset.pos = 'verb';
+        } else if (posLower.includes('adjective')) {
+            cardBackPos.dataset.pos = 'adjective';
+        } else if (posLower.includes('noun')) {
+            cardBackPos.dataset.pos = 'noun';
+        } else if (posLower.includes('adverb')) {
+            cardBackPos.dataset.pos = 'adverb';
+        } else {
+            cardBackPos.dataset.pos = '';
+        }
+
+        // Conjugation forms
+        formMasu.textContent = masu;
+        formTe.textContent = te;
+        formNai.textContent = nai;
+        formTa.textContent = ta;
+
+        // Check if any forms exist (not just "-" which means N/A)
+        const hasForms = [masu, te, nai, ta].some(f => f && f !== '-');
+        cardBackForms.classList.toggle('hidden', !hasForms);
+
+        // Usage notes
+        cardBackNotes.textContent = notes;
     }
 
     function loadNextCardData() {
@@ -209,11 +289,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function showNextCard() {
         isLoading = true;
         isFlipped = false;
+        hintRevealed = false;
 
         cardFrontText.textContent = '';
+        cardFrontReading.textContent = '';
+        cardFrontReading.classList.remove('visible');
         cardBackTitle.textContent = '';
-        cardBackDesc.textContent = '';
-        cardBackDesc.classList.remove('visible');
+        cardBackReading.textContent = '';
+        cardBackPos.textContent = '';
+        formMasu.textContent = '';
+        formTe.textContent = '';
+        formNai.textContent = '';
+        formTa.textContent = '';
+        cardBackNotes.textContent = '';
         answerHints.classList.remove('visible');
 
         if (!card.classList.contains('is-flipped')) {
@@ -240,12 +328,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         showFeedback(isCorrect);
 
-        if (isCorrect) {
-            stats[currentCard.Japanese].correct++;
-            sessionStats.correct++;
-        } else {
-            stats[currentCard.Japanese].incorrect++;
-            sessionStats.incorrect++;
+        const key = currentCard.Kanji || currentCard.Japanese;
+        if (key && stats[key]) {
+            if (isCorrect) {
+                stats[key].correct++;
+                sessionStats.correct++;
+            } else {
+                stats[key].incorrect++;
+                sessionStats.incorrect++;
+            }
         }
 
         saveStats();
@@ -264,6 +355,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isFlipped) {
             showNextCard();
         } else {
+            // In hint mode (ja-en only), first tap reveals reading
+            if (displayMode === 'hint' && mode === 'ja-en' && !hintRevealed) {
+                hintRevealed = true;
+                cardFrontReading.classList.add('visible');
+                return;
+            }
+            // Otherwise flip the card
             isFlipped = true;
             card.classList.add('is-flipped');
             answerHints.classList.add('visible');
@@ -428,6 +526,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Display mode buttons
+    displayModeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            displayMode = btn.dataset.display;
+            updateDisplayModeButtons();
+            saveSettings();
+            renderCurrentCard();
+        });
+    });
+
     // Mode toggle
     modeToggle.addEventListener('change', () => {
         mode = modeToggle.checked ? 'en-ja' : 'ja-en';
@@ -467,15 +575,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Double-tap to show description
-    let lastTapTime = 0;
-    card.addEventListener('click', () => {
-        const now = Date.now();
-        if (now - lastTapTime < 300 && isFlipped) {
-            cardBackDesc.classList.toggle('visible');
-        }
-        lastTapTime = now;
-    });
 
     // --- Initialization ---
     async function initializeApp() {

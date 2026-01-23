@@ -76,11 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Process all words with their stats
         const processedWords = vocabData.map(item => {
-            const wordStats = stats[item.Japanese] || { correct: 0, incorrect: 0 };
+            const kanji = item.Kanji || item.Japanese || '';
+            const reading = item['Reading (Kana)'] || '';
+            const wordStats = stats[kanji] || { correct: 0, incorrect: 0 };
             const total = wordStats.correct + wordStats.incorrect;
             const accuracy = total > 0 ? wordStats.correct / total : 0;
             return {
-                japanese: item.Japanese,
+                japanese: kanji,
+                reading: reading,
                 english: item.English,
                 correct: wordStats.correct,
                 incorrect: wordStats.incorrect,

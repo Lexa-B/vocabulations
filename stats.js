@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let vocabData = [];
         try {
-            const response = await fetch('vocab.csv');
+            const response = await fetch('data/vocab.csv');
             const csvText = await response.text();
             vocabData = parseCSV(csvText);
         } catch (error) {
-            console.error("Could not load vocab.csv:", error);
+            console.error("Could not load data/vocab.csv:", error);
             return;
         }
 

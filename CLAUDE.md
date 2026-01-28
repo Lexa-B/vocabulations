@@ -20,10 +20,11 @@ python3 -m http.server 8000
 - `index.html` + `script.js` - Main flashcard practice interface
 - `stats.html` + `stats.js` - Performance statistics visualization (uses Chart.js)
 - `style.css` - Shared styles for the practice page
-- `vocab.csv` - Vocabulary data (Japanese, English, Description columns)
+- `data/vocab.csv` - Vocabulary data (Japanese, English, Description columns)
+- `data/vocab_schema.json` - Schema for LLM-based vocab generation
 
 **Data flow:**
-- Vocabulary loaded from `vocab.csv` via fetch and parsed with custom CSV parser
+- Vocabulary loaded from `data/vocab.csv` via fetch and parsed with custom CSV parser
 - User progress stored in `localStorage` under key `vocabStats`
 - Stats format: `{ "Japanese word": { correct: N, incorrect: N }, ... }`
 

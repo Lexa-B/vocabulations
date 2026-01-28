@@ -1,0 +1,189 @@
+{
+  "name": "Japanese Vocabulary CSV Schema",
+  "description": "Schema for generating new rows in data/vocab.csv for a Japanese vocabulary flashcard app",
+  "columns": [
+    {
+      "name": "Kanji",
+      "description": "The word in its standard written form (kanji, katakana for loanwords, or hiragana if no kanji exists)",
+      "required": true,
+      "examples": ["仕事", "サーフィン", "ゆっくり"],
+      "rules": [
+        "Use kanji when the word has a common kanji form",
+        "Use katakana for loanwords (gairaigo) from English or other languages",
+        "Use hiragana for words without kanji or when hiragana is the standard form"
+      ]
+    },
+    {
+      "name": "Reading (Kana)",
+      "description": "The phonetic reading in hiragana (or katakana if the word is a loanword)",
+      "required": true,
+      "examples": ["しごと", "サーフィン", "ゆっくり"],
+      "rules": [
+        "Always provide the full reading",
+        "For katakana loanwords, the reading matches the Kanji column",
+        "Use standard readings; note irregular readings in Usage/Notes"
+      ]
+    },
+    {
+      "name": "English",
+      "description": "English translation(s), concise but complete",
+      "required": true,
+      "examples": ["Work / Job", "To eat", "Beautiful/Clean", "Hot (weather)"],
+      "rules": [
+        "Use ' / ' to separate distinct meanings",
+        "Add parenthetical clarifiers when needed: (weather), (touch), (my), (other)",
+        "Keep translations concise (1-5 words typically)",
+        "For verbs, use 'To [verb]' format"
+      ]
+    },
+    {
+      "name": "Part of Speech",
+      "description": "Grammatical category determining conjugation patterns",
+      "required": true,
+      "values": {
+        "Noun": "Standard noun, conjugates with です/で/じゃない/だった",
+        "Noun (Suru)": "Noun that becomes a verb with する (e.g., 勉強する)",
+        "U-Verb (Trans)": "Godan verb, transitive (takes direct object)",
+        "U-Verb (Intrans)": "Godan verb, intransitive (no direct object)",
+        "Ru-Verb (Trans)": "Ichidan verb, transitive",
+        "Ru-Verb (Intrans)": "Ichidan verb, intransitive",
+        "Irregular": "Irregular verb (する, 来る, and compound verbs)",
+        "I-Adjective": "Adjective ending in い, conjugates with い patterns",
+        "Na-Adjective": "Adjective using な when modifying, conjugates like nouns",
+        "Adverb": "Modifies verbs/adjectives, no conjugation (use '-' for forms)",
+        "Phrase": "Set expression, no conjugation (use '-' for forms)",
+        "Location": "Spatial/directional word, no conjugation (use '-' for forms)",
+        "Time": "Temporal expression, no conjugation (use '-' for forms)"
+      }
+    },
+    {
+      "name": "Polite (Masu-form)",
+      "description": "Polite/formal form of the word",
+      "required": true,
+      "patterns": {
+        "Noun": "[word]です",
+        "Noun (Suru)": "[stem]します",
+        "U-Verb": "Change final -u to -imasu (e.g., 書く→書きます)",
+        "Ru-Verb": "Replace -ru with -masu (e.g., 食べる→食べます)",
+        "Irregular": "します, 来ます, or compound (e.g., 勉強します)",
+        "I-Adjective": "[word]です",
+        "Na-Adjective": "[word]です",
+        "Adverb/Phrase/Location/Time": "-"
+      }
+    },
+    {
+      "name": "Te-form",
+      "description": "Conjunctive form used for connecting, requests, progressive",
+      "required": true,
+      "patterns": {
+        "Noun": "[word]で",
+        "Noun (Suru)": "[stem]して",
+        "U-Verb": {
+          "-う/-つ/-る": "→ って (買う→買って)",
+          "-む/-ぶ/-ぬ": "→ んで (飲む→飲んで)",
+          "-く": "→ いて (書く→書いて, exception: 行く→行って)",
+          "-ぐ": "→ いで (泳ぐ→泳いで)",
+          "-す": "→ して (話す→話して)"
+        },
+        "Ru-Verb": "Replace -ru with -te (食べる→食べて)",
+        "Irregular": "して, 来て, or compound (e.g., 勉強して)",
+        "I-Adjective": "Replace -い with -くて (高い→高くて)",
+        "Na-Adjective": "[word]で",
+        "Adverb/Phrase/Location/Time": "-"
+      }
+    },
+    {
+      "name": "Short Negative (Nai)",
+      "description": "Plain negative form",
+      "required": true,
+      "patterns": {
+        "Noun": "[word]じゃない",
+        "Noun (Suru)": "[stem]しない",
+        "U-Verb": "Change final -u to -anai (書く→書かない, exception: -う→わない)",
+        "Ru-Verb": "Replace -ru with -nai (食べる→食べない)",
+        "Irregular": "しない, 来ない, or compound",
+        "I-Adjective": "Replace -い with -くない (高い→高くない)",
+        "Na-Adjective": "[word]じゃない",
+        "Adverb/Phrase/Location/Time": "-"
+      },
+      "exceptions": {
+        "ある": "ない (not あらない)"
+      }
+    },
+    {
+      "name": "Short Past (Ta)",
+      "description": "Plain past tense form",
+      "required": true,
+      "patterns": {
+        "Noun": "[word]だった",
+        "Noun (Suru)": "[stem]した",
+        "U-Verb": {
+          "-う/-つ/-る": "→ った (買う→買った)",
+          "-む/-ぶ/-ぬ": "→ んだ (飲む→飲んだ)",
+          "-く": "→ いた (書く→書いた, exception: 行く→行った)",
+          "-ぐ": "→ いだ (泳ぐ→泳いだ)",
+          "-す": "→ した (話す→話した)"
+        },
+        "Ru-Verb": "Replace -ru with -ta (食べる→食べた)",
+        "Irregular": "した, 来た, or compound",
+        "I-Adjective": "Replace -い with -かった (高い→高かった)",
+        "Na-Adjective": "[word]だった",
+        "Adverb/Phrase/Location/Time": "-"
+      }
+    },
+    {
+      "name": "Usage/Notes",
+      "description": "Optional field for additional context, exceptions, or usage notes",
+      "required": false,
+      "examples": [
+        "User specific",
+        "Slang: posting yummy food photos at night",
+        "Childish/Cute",
+        "Pitch accent: L-H",
+        "Exception: Looks like Ru, conjugates like U",
+        "Irregular",
+        "名刺交換 (exchanging cards)"
+      ],
+      "use_cases": [
+        "Mark user-specific vocabulary with 'User specific'",
+        "Note slang or colloquial usage",
+        "Indicate pitch accent patterns when disambiguation is helpful",
+        "Flag conjugation exceptions (Ru-verbs that conjugate as U-verbs)",
+        "Provide common compounds or collocations",
+        "Add cultural context or usage tips"
+      ]
+    }
+  ],
+  "verb_exceptions": {
+    "description": "Some verbs look like Ru-verbs but conjugate as U-verbs",
+    "examples": ["帰る (kaeru)", "入る (hairu)", "切る (kiru)", "知る (shiru)"],
+    "note": "Add 'Exception: Looks like Ru, conjugates like U' to Usage/Notes"
+  },
+  "irregular_verbs": {
+    "する": {
+      "polite": "します",
+      "te": "して",
+      "negative": "しない",
+      "past": "した"
+    },
+    "来る": {
+      "polite": "来ます",
+      "te": "来て",
+      "negative": "来ない",
+      "past": "来た"
+    },
+    "いい": {
+      "note": "Irregular I-adjective",
+      "polite": "いいです",
+      "te": "よくて",
+      "negative": "よくない",
+      "past": "よかった"
+    }
+  },
+  "csv_format": {
+    "delimiter": ",",
+    "encoding": "UTF-8",
+    "header_row": true,
+    "escape": "Double quotes for values containing commas"
+  }
+}

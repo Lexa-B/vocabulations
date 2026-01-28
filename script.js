@@ -97,11 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Data Loading ---
     async function loadVocabData() {
         try {
-            const response = await fetch('vocab.csv');
+            const response = await fetch('data/vocab.csv');
             const csvText = await response.text();
             vocabData = parseCSV(csvText);
         } catch (error) {
-            console.error("Error loading vocab.csv:", error);
+            console.error("Error loading data/vocab.csv:", error);
             cardFrontText.textContent = "Error loading vocabulary";
         }
     }

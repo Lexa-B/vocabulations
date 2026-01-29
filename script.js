@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = document.getElementById('flashcard');
     const cardInner = card.querySelector('.card-inner');
     const cardFrontText = document.getElementById('card-front-text');
+    const cardFrontHintBtn = document.getElementById('card-front-hint-btn');
     const cardFrontReading = document.getElementById('card-front-reading');
     const cardBackTitle = document.getElementById('card-back-title');
     const cardBackReading = document.getElementById('card-back-reading');
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentCard = null;
     let isFlipped = false;
     let mode = 'ja-en';
-    let displayMode = 'both'; // 'kanji', 'both', or 'hint'
+    let displayMode = 'hint'; // 'kanji', 'both', or 'hint'
     let hintRevealed = false;
     let useWeightedDist = true;
     let isLoading = true;
@@ -231,14 +232,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 cardFrontText.textContent = kanji;
                 cardFrontReading.textContent = '';
                 cardFrontReading.classList.remove('visible');
+                cardFrontHintBtn.classList.remove('visible');
             } else if (displayMode === 'both') {
                 cardFrontText.textContent = kanji;
                 cardFrontReading.textContent = reading || '';
                 cardFrontReading.classList.add('visible');
+                cardFrontHintBtn.classList.remove('visible');
             } else if (displayMode === 'hint') {
                 cardFrontText.textContent = kanji;
                 cardFrontReading.textContent = reading || '';
-                cardFrontReading.classList.remove('visible'); // Hidden until first tap
+                cardFrontReading.classList.remove('visible'); // Hidden until hint button tapped
+                // Show hint button if there's a reading to reveal
+                if (reading && !hintRevealed) {
+                    cardFrontHintBtn.classList.add('visible');
+                } else {
+                    cardFrontHintBtn.classList.remove('visible');
+                }
             }
             cardBackTitle.textContent = english;
             cardBackReading.textContent = reading ? `${kanji} (${reading})` : kanji;
@@ -247,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cardFrontText.textContent = english;
             cardFrontReading.textContent = '';
             cardFrontReading.classList.remove('visible');
+            cardFrontHintBtn.classList.remove('visible');
             cardBackTitle.textContent = kanji;
             cardBackReading.textContent = reading || '';
         }
@@ -294,6 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cardFrontText.textContent = '';
         cardFrontReading.textContent = '';
         cardFrontReading.classList.remove('visible');
+        cardFrontHintBtn.classList.remove('visible');
         cardBackTitle.textContent = '';
         cardBackReading.textContent = '';
         cardBackPos.textContent = '';
@@ -355,17 +366,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isFlipped) {
             showNextCard();
         } else {
-            // In hint mode (ja-en only), first tap reveals reading
-            if (displayMode === 'hint' && mode === 'ja-en' && !hintRevealed) {
-                hintRevealed = true;
-                cardFrontReading.classList.add('visible');
-                return;
-            }
-            // Otherwise flip the card
+            // Flip the card
             isFlipped = true;
             card.classList.add('is-flipped');
             answerHints.classList.add('visible');
         }
+    }
+
+    // --- Hint Button Handler ---
+    function revealHint() {
+        if (hintRevealed) return;
+        hintRevealed = true;
+        cardFrontHintBtn.classList.remove('visible');
+        cardFrontReading.classList.add('visible');
     }
 
     // --- Settings Modal ---
@@ -389,6 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (settingsModal.classList.contains('visible')) return;
         if (e.target.closest('#settings-btn')) return;
+        if (e.target.closest('#card-front-hint-btn')) return;
 
         activePointerId = e.pointerId;
         pointerStartX = e.clientX;
@@ -443,6 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function handlePointerUp(e) {
         if (e.pointerType === 'touch') return;
         if (e.pointerId !== activePointerId) return;
+        if (e.target.closest('#card-front-hint-btn')) return;
 
         clearTimeout(longPressTimer);
         clearTimeout(hintTimer);
@@ -491,6 +506,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('touchstart', (e) => {
         if (settingsModal.classList.contains('visible')) return;
         if (e.target.closest('#settings-btn')) return;
+        if (e.target.closest('#card-front-hint-btn')) return;
 
         const touch = e.touches[0];
         touchStartX = touch.clientX;
@@ -538,6 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.classList.remove('tilting-left', 'tilting-right');
 
         if (settingsModal.classList.contains('visible')) return;
+        if (e.target.closest('#card-front-hint-btn')) return;
 
         const touch = e.changedTouches[0];
         const diffX = touch.clientX - touchStartX;
@@ -576,6 +593,19 @@ document.addEventListener('DOMContentLoaded', () => {
             openSettings();
         });
     }
+
+    // Hint button - handle both touch and click to prevent card flip
+    cardFrontHintBtn.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
+    }, { passive: true });
+    cardFrontHintBtn.addEventListener('touchend', (e) => {
+        e.stopPropagation();
+        revealHint();
+    });
+    cardFrontHintBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        revealHint();
+    });
 
     // Answer buttons
     btnCorrect.addEventListener('click', (e) => {

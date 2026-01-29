@@ -100,3 +100,505 @@ Kanji,Reading (Kana),English,Part of Speech,Polite (Masu-form),Te-form,Short Neg
 六時,ろくじ,six o’clock,Time,-,-,-,-,
 六分,ろっぷん,six minutes,Time,-,-,-,-,
 私,わたし,I,Noun,私です,私で,私じゃない,私だった,"Personal pronoun 'I' (neutral). Commonly used with particles (e.g., 私は)."
+あそこ,あそこ,over there,Location,-,-,-,-,Demonstrative location (over there)
+あの,あの,that ... (over there),Phrase,-,-,-,-,Pre-nominal demonstrative (modifies a noun)
+あれ,あれ,that one (over there),Noun,あれです,あれで,あれじゃない,あれだった,
+いくら,いくら,how much,Noun,いくらです,いくらで,いくらじゃない,いくらだった,Used as an interrogative 'How much?'
+いす,いす,chair,Noun,いすです,いすで,いすじゃない,いすだった,
+いらっしゃいませ,いらっしゃいませ,Welcome (to our store),Phrase,-,-,-,-,Very polite store greeting used by staff
+英語,えいご,English language,Noun,英語です,英語で,英語じゃない,英語だった,
+～円,～えん,. . . yen,Phrase,-,-,-,-,"Suffix for Japanese yen; attach to numbers (e.g., 三百円)"
+おいしい,おいしい,delicious,I-Adjective,おいしいです,おいしくて,おいしくない,おいしかった,
+おねがいします（～を）,おねがいします（～を）,". . . , please",Phrase,-,-,-,-,Polite request phrase; often used with を to mark the requested item
+カーテン,カーテン,curtain,Noun,カーテンです,カーテンで,カーテンじゃない,カーテンだった,Loanword (katakana)
+傘,かさ,umbrella,Noun,傘です,傘で,傘じゃない,傘だった,
+かばん,かばん,bag,Noun,かばんです,かばんで,かばんじゃない,かばんだった,
+銀行,ぎんこう,bank,Noun,銀行です,銀行で,銀行じゃない,銀行だった,
+ください（～を）,ください（～を）,Please give me . . .,Phrase,-,-,-,-,Polite request (attach を + object). Imperative/polite
+靴,くつ,shoes,Noun,靴です,靴で,靴じゃない,靴だった,
+消しゴム,けしゴム,eraser,Noun,消しゴムです,消しゴムで,消しゴムじゃない,消しゴムだった,
+黒板,こくばん,blackboard,Noun,黒板です,黒板で,黒板じゃない,黒板だった,
+ここ,ここ,here,Location,-,-,-,-,Demonstrative location (here)
+この,この,this ...,Phrase,-,-,-,-,Pre-nominal demonstrative (modifies a noun)
+これ,これ,this one,Noun,これです,これで,これじゃない,これだった,
+コンビニ,コンビニ,convenience store,Noun,コンビニです,コンビニで,コンビニじゃない,コンビニだった,
+財布,さいふ,wallet,Noun,財布です,財布で,財布じゃない,財布だった,
+魚,さかな,fish,Noun,魚です,魚で,魚じゃない,魚だった,
+ジーンズ,ジーンズ,jeans,Noun,ジーンズです,ジーンズで,ジーンズじゃない,ジーンズだった,Loanword; treated as a noun in Japanese
+辞書,じしょ,dictionary,Noun,辞書です,辞書で,辞書じゃない,辞書だった,
+自転車,じてんしゃ,bicycle,Noun,自転車です,自転車で,自転車じゃない,自転車だった,
+じゃあ,じゃあ,then... / if that's the case...,Phrase,-,-,-,-,Colloquial transitional expression (short for では/それでは)
+新聞,しんぶん,newspaper,Noun,新聞です,新聞で,新聞じゃない,新聞だった,
+スマホ,スマホ,smartphone; mobile,Noun,スマホです,スマホで,スマホじゃない,スマホだった,Colloquial abbreviation of スマートフォン
+そこ,そこ,there,Noun,そこです,そこで,そこじゃない,そこだった,
+その,その,that... (prenominal),Phrase,-,-,-,-,"Prenominal demonstrative used before nouns (e.g., その本)"
+それ,それ,that one,Noun,それです,それで,それじゃない,それだった,
+高い,たかい,expensive / high,I-Adjective,高いです,高くて,高くない,高かった,
+だれ,だれ,who,Noun,だれです,だれで,だれじゃない,だれだった,
+机,つくえ,desk,Noun,机です,机で,机じゃない,机だった,
+Ｔシャツ,ティーシャツ,T-shirt,Noun,Ｔシャツです,Ｔシャツで,Ｔシャツじゃない,Ｔシャツだった,Variant forms: Ｔシャツ / ティーシャツ
+電気,でんき,electricity; light,Noun,電気です,電気で,電気じゃない,電気だった,
+ドア,ドア,door,Noun,ドアです,ドアで,ドアじゃない,ドアだった,
+トイレ,トイレ,toilet; restroom,Noun,トイレです,トイレで,トイレじゃない,トイレだった,
+どうぞ,どうぞ,Please.; Here it is.,Phrase,-,-,-,-,"Used when offering something or giving permission (e.g., どうぞ)."
+どうも,どうも,Thank you.,Phrase,-,-,-,-,"Casual/short expression of thanks; also used as an adverbial intensifier (e.g., どうもありがとう)."
+時計,とけい,watch / clock,Noun,時計です,時計で,時計じゃない,時計だった,
+どこ,どこ,where,Noun,どこです,どこで,どこじゃない,どこだった,Interrogative word for location.
+図書館,としょかん,library,Noun,図書館です,図書館で,図書館じゃない,図書館だった,
+どの,どの,which ...,Phrase,-,-,-,-,Prenominal determiner used before a noun (どの + noun).
+どれ,どれ,which one,Noun,どれです,どれで,どれじゃない,どれだった,Interrogative pronoun referring to one item among many.
+とんかつ,とんかつ,pork cutlet,Noun,とんかつです,とんかつで,とんかつじゃない,とんかつだった,
+肉,にく,meat,Noun,肉です,肉で,肉じゃない,肉だった,
+ノート,ノート,notebook,Noun,ノートです,ノートで,ノートじゃない,ノートだった,Katakana loanword (gairaigo).
+ペン,ペン,pen,Noun,ペンです,ペンで,ペンじゃない,ペンだった,Katakana loanword.
+帽子,ぼうし,hat / cap,Noun,帽子です,帽子で,帽子じゃない,帽子だった,
+本,ほん,book,Noun,本です,本で,本じゃない,本だった,
+窓,まど,window,Noun,窓です,窓で,窓じゃない,窓だった,
+メニュー,メニュー,menu,Noun,メニューです,メニューで,メニューじゃない,メニューだった,Katakana loanword.
+野菜,やさい,vegetable,Noun,野菜です,野菜で,野菜じゃない,野菜だった,
+郵便局,ゆうびんきょく,post office,Location,-,-,-,-,Location word — often used with particles に/へ (direction) or で (place of action).
+アイスクリーム,アイスクリーム,ice cream,Noun,アイスクリームです,アイスクリームで,アイスクリームじゃない,アイスクリームだった,
+朝,あさ,morning,Time,-,-,-,-,
+朝ご飯,あさごはん,breakfast,Noun,朝ご飯です,朝ご飯で,朝ご飯じゃない,朝ご飯だった,
+明日,あした,tomorrow,Time,-,-,-,-,
+あまり,あまり,not much,Adverb,-,-,-,-,"Used with negative verbs: あまり～ない (e.g., あまり食べない)"
+いい,いい,good,I-Adjective,いいです,よくて,よくない,よかった,Irregular i-adjective (forms derive from よ-)
+家,いえ,home / house,Noun,家です,家で,家じゃない,家だった,
+行く,いく,To go,U-Verb (Intrans),行きます,行って,行かない,行った,Irregular te-/past pattern: 行く → 行って / 行った
+いつ,いつ,when,Time,-,-,-,-,
+うち,うち,home / house / my place,Noun,うちです,うちで,うちじゃない,うちだった,Colloquial for 家; can mean one's own home
+映画,えいが,movie,Noun,映画です,映画で,映画じゃない,映画だった,
+ええ,ええ,yes,Phrase,-,-,-,-,Casual/colloquial yes (more casual than はい)
+起きる,おきる,To get up,Ru-Verb (Intrans),起きます,起きて,起きない,起きた,
+お酒,おさけ,sake / alcoholic drink,Noun,お酒です,お酒で,お酒じゃない,お酒だった,Can mean Japanese sake or alcohol in general depending on context
+お茶,おちゃ,green tea,Noun,お茶です,お茶で,お茶じゃない,お茶だった,
+音楽,おんがく,music,Noun,音楽です,音楽で,音楽じゃない,音楽だった,
+帰る,かえる,To go back / to return,U-Verb (Intrans),帰ります,帰って,帰らない,帰った,Exception: Looks like a ru-verb (ends in る) but conjugates as a u-verb
+学校,がっこう,school,Noun,学校です,学校で,学校じゃない,学校だった,
+カフェ,カフェ,cafe,Noun,カフェです,カフェで,カフェじゃない,カフェだった,
+聞く,きく,To listen / to hear,U-Verb (Trans),聞きます,聞いて,聞かない,聞いた,
+今日,きょう,today,Time,-,-,-,-,
+来る,くる,to come,Irregular,来ます,来て,来ない,来た,Irregular verb (来る)
+コーヒー,コーヒー,coffee,Noun,コーヒーです,コーヒーで,コーヒーじゃない,コーヒーだった,
+～ごろ,～ごろ,at about . . .,Time,-,-,-,-,"Suffix attached to time expressions (e.g., ３時ごろ)"
+今晩,こんばん,tonight,Time,-,-,-,-,
+酒,さけ,sake; alcohol,Noun,酒です,酒で,酒じゃない,酒だった,
+雑誌,ざっし,magazine,Noun,雑誌です,雑誌で,雑誌じゃない,雑誌だった,
+週末,しゅうまつ,weekend,Time,-,-,-,-,
+スポーツ,スポーツ,sports,Noun,スポーツです,スポーツで,スポーツじゃない,スポーツだった,
+する,する,to do,Irregular,します,して,しない,した,Irregular verb (する)
+全然,ぜんぜん,not at all,Adverb,-,-,-,-,Usually used with a negative verb (全然〜ない)
+そうですね,そうですね,That’s right.; Let me see.,Phrase,-,-,-,-,Set phrase used for agreement or to buy time while thinking
+たいてい,たいてい,usually,Adverb,-,-,-,-,
+食べる,たべる,to eat,Ru-Verb (Trans),食べます,食べて,食べない,食べた,
+茶,ちゃ,green tea,Noun,茶です,茶で,茶じゃない,茶だった,Often used as お茶 (おちゃ) in polite speech
+ちょっと,ちょっと,a little,Adverb,-,-,-,-,
+デート,デート,"date (romantic, not calendar)",Noun (Suru),デートします,デートして,デートしない,デートした,Commonly used with する (デートする)
+テニス,テニス,tennis,Noun (Suru),テニスします,テニスして,テニスしない,テニスした,Commonly used with する (テニスする)
+でも,でも,but,Phrase,-,-,-,-,Conjunction; often appears at the start of a sentence
+どうですか,どうですか,How about . . . ?; How is . . . ?,Phrase,-,-,-,-,
+時々,ときどき,sometimes,Adverb,-,-,-,-,
+土曜日,どようび,Saturday,Time,-,-,-,-,
+日曜日,にちようび,Sunday,Time,-,-,-,-,
+寝る,ねる,To sleep; To go to sleep,Ru-Verb (Intrans),寝ます,寝て,寝ない,寝た,
+飲む,のむ,To drink,U-Verb (Trans),飲みます,飲んで,飲まない,飲んだ,
+話す,はなす,To speak; To talk,U-Verb (Trans),話します,話して,話さない,話した,
+早い,はやい,early,I-Adjective,早いです,早くて,早くない,早かった,
+晩ご飯,ばんごはん,dinner,Noun,晩ご飯です,晩ご飯で,晩ご飯じゃない,晩ご飯だった,
+ハンバーガー,ハンバーガー,hamburger,Noun,ハンバーガーです,ハンバーガーで,ハンバーガーじゃない,ハンバーガーだった,
+昼ご飯,ひるごはん,lunch,Noun,昼ご飯です,昼ご飯で,昼ご飯じゃない,昼ご飯だった,
+勉強する,べんきょうする,To study,Irregular,勉強します,勉強して,勉強しない,勉強した,Compound with する (irregular verb)
+毎日,まいにち,every day,Time,-,-,-,-,
+毎晩,まいばん,every night,Time,-,-,-,-,
+水,みず,water,Noun,水です,水で,水じゃない,水だった,
+見る,みる,To see; To look at; To watch,Ru-Verb (Trans),見ます,見て,見ない,見た,
+よく,よく,often; much,Adverb,-,-,-,-,
+読む,よむ,To read,U-Verb (Trans),読みます,読んで,読まない,読んだ,
+間,あいだ,between,Noun,間です,間で,間じゃない,間だった,
+会う,あう,To meet; to see (a person),U-Verb (Trans),会います,会って,会わない,会った,
+あさって,あさって,the day after tomorrow,Time,-,-,-,-,
+あなた,あなた,you,Noun,あなたです,あなたで,あなたじゃない,あなただった,Personal pronoun; can be rude in some contexts—use names or titles when appropriate
+ある,ある,There is ...,U-Verb (Intrans),あります,あって,ない,あった,Exception: negative is ない (not あらない)
+アルバイト,アルバイト,part-time job,Noun,アルバイトです,アルバイトで,アルバイトじゃない,アルバイトだった,Loanword (from German 'Arbeit') commonly used for student/part-time work
+一月,いちがつ,January,Time,-,-,-,-,
+一時間,いちじかん,one hour,Time,-,-,-,-,
+五日,いつか,the fifth day of a month,Time,-,-,-,-,Also written いつか (hiragana) meaning 'someday'
+犬,いぬ,dog,Noun,犬です,犬で,犬じゃない,犬だった,
+いる,いる,To be (someone); to stay,Ru-Verb (Intrans),います,いて,いない,いた,
+上,うえ,on,Location,-,-,-,-,Indicates position; also used in compounds (例: 上に)
+後ろ,うしろ,back; behind,Location,-,-,-,-,
+遅く,おそく,(do something) late,Adverb,-,-,-,-,Adverbial form of the i-adjective 遅い
+お寺,おてら,temple,Noun,お寺です,お寺で,お寺じゃない,お寺だった,
+おととい,おととい,the day before yesterday,Time,-,-,-,-,
+おととし,おととし,the year before last,Time,-,-,-,-,
+おまんじゅう,おまんじゅう,sweet bun,Noun,おまんじゅうです,おまんじゅうで,おまんじゅうじゃない,おまんじゅうだった,
+買い物,かいもの,To shop / shopping,Noun (Suru),買い物します,買い物して,買い物しない,買い物した,Commonly used with する: 買い物する
+買う,かう,To buy,U-Verb (Trans),買います,買って,買わない,買った,
+書く,かく,To write,U-Verb (Trans),書きます,書いて,書かない,書いた,
+火曜日,かようび,Tuesday,Noun,火曜日です,火曜日で,火曜日じゃない,火曜日だった,
+昨日,きのう,yesterday,Noun,昨日です,昨日で,昨日じゃない,昨日だった,
+去年,きょねん,last year,Noun,去年です,去年で,去年じゃない,去年だった,
+金曜日,きんようび,Friday,Noun,金曜日です,金曜日で,金曜日じゃない,金曜日だった,
+九月,くがつ,September,Noun,九月です,九月で,九月じゃない,九月だった,
+～ぐらい,～ぐらい,about (approximate measurement),Phrase,-,-,-,-,Suffix used after numbers/amounts to indicate approximation
+クラス,クラス,class,Noun,クラスです,クラスで,クラスじゃない,クラスだった,
+ゲーム,ゲーム,game,Noun,ゲームです,ゲームで,ゲームじゃない,ゲームだった,
+月曜日,げつようび,Monday,Noun,月曜日です,月曜日で,月曜日じゃない,月曜日だった,
+公園,こうえん,park,Noun,公園です,公園で,公園じゃない,公園だった,
+五月,ごがつ,May,Noun,五月です,五月で,五月じゃない,五月だった,
+九日,ここのか,the ninth day of a month,Noun,九日です,九日で,九日じゃない,九日だった,Reading as a day-of-month counter: ここのか
+今年,ことし,this year,Noun,今年です,今年で,今年じゃない,今年だった,
+子供,こども,child,Noun,子供です,子供で,子供じゃない,子供だった,
+ご飯,ごはん,rice / meal,Noun,ご飯です,ご飯で,ご飯じゃない,ご飯だった,
+ごめんなさい,ごめんなさい,I'm sorry.,Phrase,-,-,-,-,Polite apology expression
+今月,こんげつ,this month,Noun,今月です,今月で,今月じゃない,今月だった,
+今週,こんしゅう,this week,Noun,今週です,今週で,今週じゃない,今週だった,
+再来月,さらいげつ,the month after next,Noun,再来月です,再来月で,再来月じゃない,再来月だった,
+再来週,さらいしゅう,the week after next,Time,-,-,-,-,
+再来年,さらいねん,the year after next,Time,-,-,-,-,
+三月,さんがつ,March,Time,-,-,-,-,
+四月,しがつ,April,Time,-,-,-,-,
+～時間,～じかん,. . . hours,Time,-,-,-,-,"Suffix indicating duration (e.g., 二時間 = two hours)"
+下,した,under,Location,-,-,-,-,Spatial noun meaning 'below/under'; also reads しも/か in compounds
+七月,しちがつ,July,Time,-,-,-,-,
+写真,しゃしん,picture / photograph,Noun,写真です,写真で,写真じゃない,写真だった,Commonly used with 撮る (写真を撮る = to take a photo)
+十一月,じゅういちがつ,November,Time,-,-,-,-,
+十一日,じゅういちにち,the eleventh day of a month,Time,-,-,-,-,
+十月,じゅうがつ,October,Time,-,-,-,-,
+十二月,じゅうにがつ,December,Time,-,-,-,-,
+十四日,じゅうよっか,the fourteenth day of a month,Time,-,-,-,-,
+水曜日,すいようび,Wednesday,Time,-,-,-,-,
+スーパー,スーパー,supermarket,Noun,スーパーです,スーパーで,スーパーじゃない,スーパーだった,Loanword (katakana)
+先月,せんげつ,last month,Time,-,-,-,-,
+先週,せんしゅう,last week,Time,-,-,-,-,
+それから,それから,and then,Adverb,-,-,-,-,Sentence connector meaning 'after that' or 'and then'
+だから,だから,so / therefore,Adverb,-,-,-,-,Casual connective meaning 'so'; often used to give a reason
+たくさん,たくさん,many / a lot,Adverb,-,-,-,-,Can also modify nouns with の (たくさんの〜) to mean 'many'
+近く,ちかく,near; nearby,Noun,近くです,近くで,近くじゃない,近くだった,"Also commonly used as an adverb meaning ""nearby"" (e.g., 近くにある)."
+一日,ついたち,the first day of a month,Time,-,-,-,-,Special reading for the 1st day of the month (日 has many day-counter readings).
+寺,てら,temple,Location,-,-,-,-,Place (temple); treated as a location word here.
+～と,～と,together with (a person); and,Phrase,-,-,-,-,Particle meaning 'and' or 'with' (indicates accompaniment or quotation).
+どうして,どうして,why,Adverb,-,-,-,-,
+十日,とおか,the tenth day of a month,Time,-,-,-,-,Special reading for the 10th day of the month (日 counters have irregular readings).
+時,とき,when . . . ; at the time of . . .,Time,-,-,-,-,"Used in time/temporal expressions (e.g., 行くとき)."
+隣,となり,next,Location,-,-,-,-,"Indicates adjacency/next to (e.g., 隣の家)."
+撮る,とる,To take (a picture),U-Verb (Trans),撮ります,撮って,撮らない,撮った,Transitive verb (takes object を). U-verb conjugation.
+中,なか,inside,Location,-,-,-,-,"Indicates interior/location (e.g., 部屋の中)."
+七日,なのか,the seventh day of a month,Time,-,-,-,-,Special reading for the 7th day of the month (日 counter irregular).
+二か月前,にかげつまえ,two months ago,Time,-,-,-,-,
+二月,にがつ,February,Time,-,-,-,-,
+二週間前,にしゅうかんまえ,two weeks ago,Time,-,-,-,-,
+二十四日,にじゅうよっか,the twenty-fourth day of a month,Time,-,-,-,-,Day-counter uses irregular reading よっか for the 4/14/24 day pattern.
+猫,ねこ,cat,Noun,猫です,猫で,猫じゃない,猫だった,
+バス停,バスてい,bus stop,Location,-,-,-,-,Compound of katakana loanword + kanji; '停' read てい.
+八月,はちがつ,August,Time,-,-,-,-,
+二十日,はつか,the twentieth day of a month,Time,-,-,-,-,Special reading for the 20th day (日 counter irregular).
+花,はな,flower,Noun,花です,花で,花じゃない,花だった,
+パン,パン,bread,Noun,パンです,パンで,パンじゃない,パンだった,
+左,ひだり,left,Location,-,-,-,-,
+人,ひと,person,Noun,人です,人で,人じゃない,人だった,
+一人で,ひとりで,alone,Adverb,-,-,-,-,
+病院,びょういん,hospital,Noun,病院です,病院で,病院じゃない,病院だった,
+二日,ふつか,the second day of a month,Time,-,-,-,-,
+ホテル,ホテル,hotel,Noun,ホテルです,ホテルで,ホテルじゃない,ホテルだった,
+本屋,ほんや,bookstore,Noun,本屋です,本屋で,本屋じゃない,本屋だった,
+前,まえ,front,Location,-,-,-,-,
+町,まち,town / city,Noun,町です,町で,町じゃない,町だった,
+待つ,まつ,To wait,U-Verb (Trans),待ちます,待って,待たない,待った,
+まんじゅう,まんじゅう,sweet bun,Noun,まんじゅうです,まんじゅうで,まんじゅうじゃない,まんじゅうだった,
+右,みぎ,right,Location,-,-,-,-,
+店,みせ,shop / store,Noun,店です,店で,店じゃない,店だった,
+三日,みっか,the third day of a month,Time,-,-,-,-,
+六日,むいか,the sixth day of a month,Time,-,-,-,-,
+木曜日,もくようび,Thursday,Time,-,-,-,-,
+もしもし,もしもし,Hello? (used on the phone),Phrase,-,-,-,-,
+八日,ようか,the eighth day of a month,Time,-,-,-,-,
+四日,よっか,the fourth day of a month,Time,-,-,-,-,
+来月,らいげつ,next month,Time,-,-,-,-,
+来週,らいしゅう,next week,Time,-,-,-,-,
+来年,らいねん,next year,Time,-,-,-,-,
+レストラン,レストラン,restaurant,Noun,レストランです,レストランで,レストランじゃない,レストランだった,
+レポート,レポート,(term) paper,Noun,レポートです,レポートで,レポートじゃない,レポートだった,
+六月,ろくがつ,June,Time,-,-,-,-,
+わかる,わかる,To understand,U-Verb (Intrans),わかります,わかって,わからない,わかった,
+新しい,あたらしい,new,I-Adjective,新しいです,新しくて,新しくない,新しかった,
+熱い,あつい,hot (thing),I-Adjective,熱いです,熱くて,熱くない,熱かった,Used for hot objects/ touch/temperature; contrast with 暑い (weather).
+暑い,あつい,hot (weather),I-Adjective,暑いです,暑くて,暑くない,暑かった,Used for hot weather/air; contrast with 熱い (objects).
+忙しい,いそがしい,busy (people/days),I-Adjective,忙しいです,忙しくて,忙しくない,忙しかった,
+一緒に,いっしょに,together,Adverb,-,-,-,-,
+海,うみ,sea,Noun,海です,海で,海じゃない,海だった,
+Ｌサイズ,エルサイズ,size L,Noun,Ｌサイズです,Ｌサイズで,Ｌサイズじゃない,Ｌサイズだった,Loanword (katakana reading エルサイズ).
+大きい,おおきい,large,I-Adjective,大きいです,大きくて,大きくない,大きかった,
+お城,おしろ,castle,Noun,お城です,お城で,お城じゃない,お城だった,
+男の人,おとこのひと,man,Noun,男の人です,男の人で,男の人じゃない,男の人だった,
+お土産,おみやげ,souvenir,Noun,お土産です,お土産で,お土産じゃない,お土産だった,
+面白い,おもしろい,interesting; funny,I-Adjective,面白いです,面白くて,面白くない,面白かった,
+泳ぐ,およぐ,To swim,U-Verb (Intrans),泳ぎます,泳いで,泳がない,泳いだ,Intransitive verb (to swim).
+女の人,おんなのひと,woman,Noun,女の人です,女の人で,女の人じゃない,女の人だった,
+～が,～が,". . . , but",Phrase,-,-,-,-,Particle used to soften/contradict or as conjunction meaning 'but'.
+かっこいい,かっこいい,good-looking,I-Adjective,かっこいいです,かっこよくて,かっこよくない,かっこよかった,"Irregular behavior from いい → よく (e.g., かっこよくて / かっこよくない / かっこよかった)."
+嫌い,きらい（な）,disgusted with; to dislike,Na-Adjective,嫌いです,嫌いで,嫌いじゃない,嫌いだった,な-adjective. Use with が to mark the disliked object (Xが嫌い).
+きれい（な）,きれい（な）,beautiful; clean,Na-Adjective,きれいです,きれいで,きれいじゃない,きれいだった,な-adjective. Often written 綺麗.
+果物,くだもの,fruit,Noun,果物です,果物で,果物じゃない,果物だった,
+元気,げんき,healthy; energetic,Na-Adjective,元気です,元気で,元気じゃない,元気だった,
+怖い,こわい,frightening,I-Adjective,怖いです,怖くて,怖くない,怖かった,
+サーフィン,サーフィン,surfing,Noun (Suru),サーフィンします,サーフィンして,サーフィンしない,サーフィンした,Usually used with する (サーフィンをする)
+～様,～さま,Mr./Ms. . . .,Phrase,-,-,-,-,Honorific suffix attached to names; more polite than さん
+寒い,さむい,cold (weather),I-Adjective,寒いです,寒くて,寒くない,寒かった,
+静か,しずか,quiet,Na-Adjective,静かです,静かで,静かじゃない,静かだった,
+宿題,しゅくだい,homework,Noun (Suru),宿題します,宿題して,宿題しない,宿題した,Often used with を: 宿題をする
+城,しろ,castle,Noun,城です,城で,城じゃない,城だった,
+好き,すき,fond of; to like,Na-Adjective,好きです,好きで,好きじゃない,好きだった,"When expressing likes, use が好きだ/です (e.g., コーヒーが好きです)"
+すごく,すごく,extremely,Adverb,-,-,-,-,
+大嫌い,だいきらい,to hate,Na-Adjective,大嫌いです,大嫌いで,大嫌いじゃない,大嫌いだった,
+大丈夫,だいじょうぶ,It’s okay.; Not to worry.; Everything is under control.,Phrase,-,-,-,-,Commonly used like a な-adjective (大丈夫です)
+大好き,だいすき,very fond of; to love,Na-Adjective,大好きです,大好きで,大好きじゃない,大好きだった,
+大変,たいへん,tough (situation),Na-Adjective,大変です,大変で,大変じゃない,大変だった,
+楽しい,たのしい,fun,I-Adjective,楽しいです,楽しくて,楽しくない,楽しかった,
+食べ物,たべもの,food,Noun,食べ物です,食べ物で,食べ物じゃない,食べ物だった,
+誕生日,たんじょうび,birthday,Noun,誕生日です,誕生日で,誕生日じゃない,誕生日だった,
+小さい,ちいさい,small,I-Adjective,小さいです,小さくて,小さくない,小さかった,
+つまらない,つまらない,boring,I-Adjective,つまらないです,つまらなくて,つまらなくない,つまらなかった,
+出かける,でかける,To go out,Ru-Verb (Intrans),出かけます,出かけて,出かけない,出かけた,Intransitive verb: to go out (no direct object)
+テスト,テスト,test,Noun,テストです,テストで,テストじゃない,テストだった,
+では、お元気で,では、おげんきで,Take care.,Phrase,-,-,-,-,Parting expression; literally 'be well'
+天気,てんき,weather,Noun,天気です,天気で,天気じゃない,天気だった,
+とても,とても,very,Adverb,-,-,-,-,
+どんな,どんな,what kind of ...,Phrase,-,-,-,-,Used before nouns to ask what kind/type
+にぎやか（な）,にぎやか（な）,lively,Na-Adjective,にぎやかです,にぎやかで,にぎやかじゃない,にぎやかだった,
+飲み物,のみもの,drink,Noun,飲み物です,飲み物で,飲み物じゃない,飲み物だった,
+乗る,のる,To ride / To board,U-Verb (Intrans),乗ります,乗って,乗らない,乗った,
+バス,バス,bus,Noun,バスです,バスで,バスじゃない,バスだった,
+暇,ひま（な）,not busy; free (time),Na-Adjective,暇です,暇で,暇じゃない,暇だった,
+古い,ふるい,old (thing),I-Adjective,古いです,古くて,古くない,古かった,
+部屋,へや,room,Noun,部屋です,部屋で,部屋じゃない,部屋だった,
+僕,ぼく,I (used by men),Noun,僕です,僕で,僕じゃない,僕だった,Typically used by males; casual pronoun
+～枚,～まい,[counter for flat objects],Phrase,-,-,-,-,"Suffix counter attached to numbers (e.g., 一枚、二枚)"
+土産,みやげ,souvenir,Noun,土産です,土産で,土産じゃない,土産だった,Often used as お土産
+難しい,むずかしい,difficult,I-Adjective,難しいです,難しくて,難しくない,難しかった,
+メキシコ,メキシコ,Mexico,Noun,メキシコです,メキシコで,メキシコじゃない,メキシコだった,Country name (katakana)
+やさしい,やさしい,easy (problem) / kind (person),I-Adjective,やさしいです,やさしくて,やさしくない,やさしかった,Can mean 'easy' or 'kind' depending on context
+安い,やすい,inexpensive; cheap (thing),I-Adjective,安いです,安くて,安くない,安かった,
+休み,やすみ,holiday; day off; absence,Noun,休みです,休みで,休みじゃない,休みだった,
+山,やま,mountain,Noun,山です,山で,山じゃない,山だった,
+やる,やる,To do / To perform,U-Verb (Trans),やります,やって,やらない,やった,"Casual; can also mean 'to give' (colloquial, rougher than あげる)"
+夜,よる,night,Noun,夜です,夜で,夜じゃない,夜だった,
+旅行,りょこう,travel / trip,Noun (Suru),旅行します,旅行して,旅行しない,旅行した,Commonly used with する: 旅行する
+開ける,あける,To open (something),Ru-Verb (Trans),開けます,開けて,開けない,開けた,
+遊ぶ,あそぶ,To play / to spend time pleasantly,U-Verb (Intrans),遊びます,遊んで,遊ばない,遊んだ,
+後で,あとで,Later on,Adverb,-,-,-,-,
+急ぐ,いそぐ,To hurry,U-Verb (Intrans),急ぎます,急いで,急がない,急いだ,
+イタリア,イタリア,Italy,Noun,イタリアです,イタリアで,イタリアじゃない,イタリアだった,
+いつも,いつも,Always,Adverb,-,-,-,-,
+エアコン,エアコン,Air conditioner,Noun,エアコンです,エアコンで,エアコンじゃない,エアコンだった,
+駅,えき,Station,Noun,駅です,駅で,駅じゃない,駅だった,
+お金,おかね,Money,Noun,お金です,お金で,お金じゃない,お金だった,
+教える,おしえる,To teach / to instruct,Ru-Verb (Trans),教えます,教えて,教えない,教えた,
+降りる,おりる,To get off,Ru-Verb (Intrans),降ります,降りて,降りない,降りた,
+返す,かえす,To return (a thing),U-Verb (Trans),返します,返して,返さない,返した,
+角,かど,Corner,Noun,角です,角で,角じゃない,角だった,
+金,かね,Money,Noun,金です,金で,金じゃない,金だった,
+借りる,かりる,To borrow,Ru-Verb (Trans),借ります,借りて,借りない,借りた,
+漢字,かんじ,Kanji / Chinese character,Noun,漢字です,漢字で,漢字じゃない,漢字だった,
+北,きた,North,Noun,北です,北で,北じゃない,北だった,
+教科書,きょうかしょ,Textbook,Noun,教科書です,教科書で,教科書じゃない,教科書だった,
+国,くに,Country / place of origin,Noun,国です,国で,国じゃない,国だった,
+消す,けす,To turn off / to erase,U-Verb (Trans),消します,消して,消さない,消した,
+結構です,けっこうです,That would be fine. / That wouldn’t be necessary,Phrase,-,-,-,-,Fixed polite phrase using です; used to accept or politely decline
+シェフ,シェフ,chef,Noun,シェフです,シェフで,シェフじゃない,シェフだった,
+死ぬ,しぬ,To die,U-Verb (Intrans),死にます,死んで,死なない,死んだ,
+閉める,しめる,To close (something),Ru-Verb (Trans),閉めます,閉めて,閉めない,閉めた,
+シャワー,シャワー,shower,Noun,シャワーです,シャワーで,シャワーじゃない,シャワーだった,
+シャワーを浴びる,シャワーをあびる,To take a shower,Ru-Verb (Trans),シャワーを浴びます,シャワーを浴びて,シャワーを浴びない,シャワーを浴びた,
+信号,しんごう,traffic light,Noun,信号です,信号で,信号じゃない,信号だった,
+すぐ,すぐ,right away,Adverb,-,-,-,-,
+座る,すわる,To sit down,U-Verb (Intrans),座ります,座って,座らない,座った,
+立つ,たつ,To stand up,U-Verb (Intrans),立ちます,立って,立たない,立った,
+たばこを吸う,たばこをすう,To smoke,U-Verb (Trans),たばこを吸います,たばこを吸って,たばこを吸わない,たばこを吸った,Verb ending -う → negative uses -わない (吸う→吸わない)
+使う,つかう,To use,U-Verb (Trans),使います,使って,使わない,使った,
+次,つぎ,next,Noun,次です,次で,次じゃない,次だった,
+つける,つける,To turn on,Ru-Verb (Trans),つけます,つけて,つけない,つけた,
+連れてくる,つれてくる,To bring (a person),Irregular,連れて来ます,連れて来て,連れてこない,連れてきた,Irregular: uses 来る (くる) conjugation for the second element
+手伝う,てつだう,To help,U-Verb (Trans),手伝います,手伝って,手伝わない,手伝った,
+出る,でる,To appear / To attend / To exit,Ru-Verb (Intrans),出ます,出て,出ない,出た,
+電車,でんしゃ,train,Noun,電車です,電車で,電車じゃない,電車だった,
+電話する,でんわする,To call,Noun (Suru),電話します,電話して,電話しない,電話した,
+西,にし,west,Location,-,-,-,-,Also used as a noun meaning 'the west' or 'western'
+荷物,にもつ,baggage,Noun,荷物です,荷物で,荷物じゃない,荷物だった,
+入る,はいる,To enter,U-Verb (Intrans),入ります,入って,入らない,入った,"Exception: Looks like Ru, conjugates like U"
+パソコン,パソコン,personal computer,Noun,パソコンです,パソコンで,パソコンじゃない,パソコンだった,
+東,ひがし,east,Noun,東です,東で,東じゃない,東だった,
+ピザ,ピザ,pizza,Noun,ピザです,ピザで,ピザじゃない,ピザだった,
+左側,ひだりがわ,left side,Noun,左側です,左側で,左側じゃない,左側だった,
+一つ目,ひとつめ,first,Noun,一つ目です,一つ目で,一つ目じゃない,一つ目だった,
+二つ目,ふたつめ,second,Noun,二つ目です,二つ目で,二つ目じゃない,二つ目だった,
+ページ,ページ,page,Noun,ページです,ページで,ページじゃない,ページだった,
+本当ですか,ほんとうですか,Really?,Phrase,-,-,-,-,Set phrase used to express surprise or disbelief
+曲がる,まがる,To turn (right/left),U-Verb (Intrans),曲がります,曲がって,曲がらない,曲がった,
+まっすぐ,まっすぐ,straight,Adverb,-,-,-,-,
+右側,みぎがわ,right side,Noun,右側です,右側で,右側じゃない,右側だった,
+三つ目,みっつめ,third,Noun,三つ目です,三つ目で,三つ目じゃない,三つ目だった,
+皆さん,みなさん,everyone / all of you,Noun,皆さんです,皆さんで,皆さんじゃない,皆さんだった,Polite form of addressing a group
+南,みなみ,south,Noun,南です,南で,南じゃない,南だった,
+持つ,もつ,To carry / To hold,U-Verb (Trans),持ちます,持って,持たない,持った,
+持ってくる,もってくる,To bring (a thing),Irregular,持ってきます,持ってきて,持ってこない,持ってきた,Irregular compound with 来る (conjugates like 来る: くる→きます/こない/きた)
+休む,やすむ,To be absent (from) / To rest,U-Verb (Intrans),休みます,休んで,休まない,休んだ,
+ゆっくり,ゆっくり,slowly / leisurely / unhurriedly,Adverb,-,-,-,-,
+料理,りょうり,Cooking / Dish,Noun (Suru),料理します,料理して,料理しない,料理した,Can be used as a verb with する (料理する = to cook).
+ワイン,ワイン,Wine,Noun,ワインです,ワインで,ワインじゃない,ワインだった,
+忘れる,わすれる,To forget / To leave behind,Ru-Verb (Trans),忘れます,忘れて,忘れない,忘れた,
+渡る,わたる,To cross,U-Verb (Intrans),渡ります,渡って,渡らない,渡った,Intransitive godan verb (looks like ru-verb but conjugates as U-verb).
+足,あし,leg / foot,Noun,足です,足で,足じゃない,足だった,
+頭,あたま,head,Noun,頭です,頭で,頭じゃない,頭だった,
+頭がいい,あたまがいい,bright / smart / clever,I-Adjective,頭がいいです,頭がよくて,頭がよくない,頭がよかった,Irregular いい → よ- forms
+兄,あに,(my) older brother,Noun,兄です,兄で,兄じゃない,兄だった,Usually refers to one's own older brother; use お兄さん to refer to someone else's
+姉,あね,(my) older sister,Noun,姉です,姉で,姉じゃない,姉だった,Usually refers to one's own older sister; use お姉さん to refer to someone else's
+歌,うた,song,Noun,歌です,歌で,歌じゃない,歌だった,
+歌う,うたう,To sing,U-Verb (Trans),歌います,歌って,歌わない,歌った,
+おじいさん,おじいさん,grandfather / old man,Noun,おじいさんです,おじいさんで,おじいさんじゃない,おじいさんだった,
+お尻,おしり,buttocks,Noun,お尻です,お尻で,お尻じゃない,お尻だった,
+おなか,おなか,stomach,Noun,おなかです,おなかで,おなかじゃない,おなかだった,Often written with kanji as お腹
+おばあさん,おばあさん,grandmother / old woman,Noun,おばあさんです,おばあさんで,おばあさんじゃない,おばあさんだった,
+会社,かいしゃ,company,Noun,会社です,会社で,会社じゃない,会社だった,
+顔,かお,face,Noun,顔です,顔で,顔じゃない,顔だった,
+かける（眼鏡を）,かける（めがねを）,To put on (glasses),Ru-Verb (Trans),かけます（眼鏡を）,かけて（眼鏡を）,かけない（眼鏡を）,かけた（眼鏡を）,
+家族,かぞく,family,Noun,家族です,家族で,家族じゃない,家族だった,
+肩,かた,shoulder,Noun,肩です,肩で,肩じゃない,肩だった,
+かぶる,かぶる,To put on (a hat),U-Verb (Trans),かぶります,かぶって,かぶらない,かぶった,Godan verb ending in る (conjugates as U-verb)
+髪,かみ,hair,Noun,髪です,髪で,髪じゃない,髪だった,
+～から,～から,from . . .,Phrase,-,-,-,-,Particle/phrase used after a noun to mean 'from'
+体に気をつける,からだにきをつける,To take care of oneself,Ru-Verb (Trans),体に気をつけます,体に気をつけて,体に気をつけない,体に気をつけた,
+かわいい,かわいい,cute,I-Adjective,かわいいです,かわいくて,かわいくない,かわいかった,
+兄弟,きょうだい,brothers and sisters,Noun,兄弟です,兄弟で,兄弟じゃない,兄弟だった,
+着る,きる,To put on (clothes above your waist),Ru-Verb (Trans),着ます,着て,着ない,着た,
+口,くち,mouth,Noun,口です,口で,口じゃない,口だった,
+首,くび,neck,Noun,首です,首で,首じゃない,首だった,
+車,くるま,car,Noun,車です,車で,車じゃない,車だった,
+結婚する,けっこんする,To get married,Noun (Suru),結婚します,結婚して,結婚しない,結婚した,
+サークル,サークル,club activity,Noun,サークルです,サークルで,サークルじゃない,サークルだった,
+知っています,しっています,I know,Phrase,-,-,-,-,Polite/progressive form of 知る (used to mean 'know')
+塾,じゅく,cram school,Noun,塾です,塾で,塾じゃない,塾だった,
+食堂,しょくどう,cafeteria / dining commons,Noun,食堂です,食堂で,食堂じゃない,食堂だった,
+尻,しり,buttocks,Noun,尻です,尻で,尻じゃない,尻だった,Colloquial/informal
+知りません,しりません,I do not know,Phrase,-,-,-,-,Polite negative form of 知る
+知る,しる,To get to know / to know,U-Verb (Trans),知ります,知って,知らない,知った,Exception: Looks like a Ru-verb but conjugates as U-verb
+親切,しんせつ（な）,kind,Na-Adjective,親切です,親切で,親切じゃない,親切だった,
+少し,すこし,a little,Adverb,-,-,-,-,Also can function as a noun meaning 'a small amount'
+住む,すむ,To live,U-Verb (Intrans),住みます,住んで,住まない,住んだ,
+背が高い,せがたかい,tall (stature),I-Adjective,背が高いです,背が高くて,背が高くない,背が高かった,
+背が低い,せがひくい,short (stature),I-Adjective,背が低いです,背が低くて,背が低くない,背が低かった,
+背中,せなか,back (body),Noun,背中です,背中で,背中じゃない,背中だった,
+楽しみにする,たのしみにする,To look forward (to),Noun (Suru),楽しみにします,楽しみにして,楽しみにしない,楽しみにした,Suru-verb (楽しみ＋に＋する). Use に with the thing you look forward to.
+父,ちち,(my) father,Noun,父です,父で,父じゃない,父だった,
+手,て,hand; arm,Noun,手です,手で,手じゃない,手だった,
+デパート,デパート,department store,Noun,デパートです,デパートで,デパートじゃない,デパートだった,Loanword (gairaigo).
+取る,とる,To take (a class); to get (a grade),U-Verb (Trans),取ります,取って,取らない,取った,
+長い,ながい,Long,I-Adjective,長いです,長くて,長くない,長かった,
+何も,なにも,not ... anything,Adverb,-,-,-,-,Used with negative verbs (何も...ない).
+～人,～にん,[counter for people],Noun,～人です,～人で,～人じゃない,～人だった,"Counter for people. Note: 1 and 2 have special forms (一人 ひとり, 二人 ふたり)."
+歯,は,tooth,Noun,歯です,歯で,歯じゃない,歯だった,
+はく,はく,To put on (items below your waist),U-Verb (Trans),はきます,はいて,はかない,はいた,Written in hiragana here; verb for wearing items on lower body/feet.
+働く,はたらく,To work,U-Verb (Intrans),働きます,働いて,働かない,働いた,
+鼻,はな,nose,Noun,鼻です,鼻で,鼻じゃない,鼻だった,
+母,はは,(my) mother,Noun,母です,母で,母じゃない,母だった,
+速い,はやい,Fast,I-Adjective,速いです,速くて,速くない,速かった,
+一人,ひとり,one person,Phrase,-,-,-,-,Also used as 'alone'. Pronunciation: ひとり.
+二人,ふたり,two people,Phrase,-,-,-,-,Pronunciation: ふたり. Counter/word for two people.
+太っています,ふとっています,To be on the heavy side,Phrase,-,-,-,-,Polite progressive/state form of 太る (ふとっている → ふとっています).
+太る,ふとる,To gain weight; overweight,U-Verb (Intrans),太ります,太って,太らない,太った,Intransitive. Progressive: ふとっている.
+別に,べつに,nothing in particular,Adverb,-,-,-,-,Usually used with negatives (別に...ない).
+便利,べんり,Convenient,Na-Adjective,便利です,便利で,便利じゃない,便利だった,な-adjective; use な when modifying nouns (便利な店).
+眉毛,まゆげ,eyebrow,Noun,眉毛です,眉毛で,眉毛じゃない,眉毛だった,
+短い,みじかい,short (length),I-Adjective,短いです,短くて,短くない,短かった,
+耳,みみ,ear,Noun,耳です,耳で,耳じゃない,耳だった,
+みんな,みんな,all / everyone,Adverb,-,-,-,-,Often written みんな or 皆; colloquial for 'everyone'
+胸,むね,breast / chest,Noun,胸です,胸で,胸じゃない,胸だった,
+目,め,eye,Noun,目です,目で,目じゃない,目だった,
+眼鏡,めがね,glasses,Noun,眼鏡です,眼鏡で,眼鏡じゃない,眼鏡だった,Often written 眼鏡 or メガネ
+もちろん,もちろん,of course,Adverb,-,-,-,-,
+やせています,やせています,to be thin,Phrase,-,-,-,-,ている form of やせる; expresses state ('is thin')
+やせる,やせる,To lose weight,Ru-Verb (Intrans),やせます,やせて,やせない,やせた,Intransitive (become thin / lose weight)
+指,ゆび,finger,Noun,指です,指で,指じゃない,指だった,
+よかったら,よかったら,if you like,Adverb,-,-,-,-,Conditional phrase from いい/よい (past かったら); used to offer or suggest
+後,あと,after (an event),Time,-,-,-,-,Used as （〜のあと） 'after ~' — time expression
+アボカド,アボカド,avocado,Noun,アボカドです,アボカドで,アボカドじゃない,アボカドだった,
+雨,あめ,rain,Noun,雨です,雨で,雨じゃない,雨だった,Homophone: 飴 (あめ) meaning 'candy'
+洗う,あらう,To wash,U-Verb (Trans),洗います,洗って,洗わない,洗った,
+アレルギー,アレルギー,allergy,Noun,アレルギーです,アレルギーで,アレルギーじゃない,アレルギーだった,
+アンケート,アンケート,questionnaire,Noun,アンケートです,アンケートで,アンケートじゃない,アンケートだった,
+言う,いう,To say,U-Verb (Trans),言います,言って,言わない,言った,
+いちご,いちご,strawberry,Noun,いちごです,いちごで,いちごじゃない,いちごだった,
+要る,いる,To need,U-Verb (Trans),要ります,要って,要らない,要った,Common kanji: 要る (いる) — u-verb meaning 'to need'
+ううん,ううん,uh-uh; no,Phrase,-,-,-,-,Informal/colloquial negative response
+うん,うん,uh-huh; yes,Phrase,-,-,-,-,Informal/colloquial affirmative response
+運転する,うんてんする,To drive,Noun (Suru),運転します,運転して,運転しない,運転した,
+遅くなる,おそくなる,To be late,U-Verb (Intrans),遅くなります,遅くなって,遅くならない,遅くなった,
+お風呂,おふろ,bath,Noun,お風呂です,お風呂で,お風呂じゃない,お風呂だった,Can also mark location (bathroom/bathtub)
+お風呂に入る,おふろにはいる,To take a bath,U-Verb (Intrans),お風呂に入ります,お風呂に入って,お風呂に入らない,お風呂に入った,入る (はいる) looks like a ru-verb but conjugates as an u-verb (exception)
+思う,おもう,To think,U-Verb (Trans),思います,思って,思わない,思った,
+カメラ,カメラ,camera,Noun,カメラです,カメラで,カメラじゃない,カメラだった,
+カラオケ,カラオケ,karaoke,Noun,カラオケです,カラオケで,カラオケじゃない,カラオケだった,
+乾杯,かんぱい,Cheers! (a toast),Phrase,-,-,-,-,Used when toasting
+気温,きおん,temperature (weather),Noun,気温です,気温で,気温じゃない,気温だった,
+キャベツ,キャベツ,cabbage,Noun,キャベツです,キャベツで,キャベツじゃない,キャベツだった,
+牛肉,ぎゅうにく,beef,Noun,牛肉です,牛肉で,牛肉じゃない,牛肉だった,
+きゅうり,きゅうり,cucumber,Noun,きゅうりです,きゅうりで,きゅうりじゃない,きゅうりだった,
+切る,きる,To cut,U-Verb (Trans),切ります,切って,切らない,切った,"Exception: Looks like Ru, conjugates like U"
+曇り,くもり,cloudy weather,Noun,曇りです,曇りで,曇りじゃない,曇りだった,
+今朝,けさ,this morning,Time,-,-,-,-,
+答える,こたえる,To answer,Ru-Verb (Trans),答えます,答えて,答えない,答えた,
+この間,このあいだ,the other day,Adverb,-,-,-,-,
+最後に,さいごに,finally; lastly,Adverb,-,-,-,-,
+残業,ざんぎょう,overtime work,Noun,残業です,残業で,残業じゃない,残業だった,
+残念（ですね）,ざんねん（ですね）,That’s too bad.,Phrase,-,-,-,-,Also a な-adjective (残念だ／残念です) used as an expression
+仕事,しごと,job; work; occupation,Noun,仕事です,仕事で,仕事じゃない,仕事だった,
+じゃがいも,じゃがいも,potato,Noun,じゃがいもです,じゃがいもで,じゃがいもじゃない,じゃがいもだった,
+上手,じょうず,skillful; good at ...,Na-Adjective,上手です,上手で,上手じゃない,上手だった,
+すいか,すいか,watermelon,Noun,すいかです,すいかで,すいかじゃない,すいかだった,
+捨てる,すてる,To throw away,Ru-Verb (Trans),捨てます,捨てて,捨てない,捨てた,
+ストレス,ストレス,stress,Noun,ストレスです,ストレスで,ストレスじゃない,ストレスだった,Loanword (gairaigo)
+スペイン,スペイン,Spain,Location,-,-,-,-,
+洗濯する,せんたくする,To do laundry,Irregular,洗濯します,洗濯して,洗濯しない,洗濯した,
+掃除する,そうじする,To clean,Irregular,掃除します,掃除して,掃除しない,掃除した,
+たまねぎ,たまねぎ,onion,Noun,たまねぎです,たまねぎで,たまねぎじゃない,たまねぎだった,
+疲れている,つかれている,to be tired,Phrase,-,-,-,-,Derived from 疲れる (ru-verb); 疲れている is the -ている state 'to be tired'.
+次に,つぎに,secondly,Adverb,-,-,-,-,
+作る,つくる,To make,U-Verb (Trans),作ります,作って,作らない,作った,
+天気予報,てんきよほう,weather forecast,Noun,天気予報です,天気予報で,天気予報じゃない,天気予報だった,
+～度,～ど,... degrees (temperature),Phrase,-,-,-,-,"Suffix; attaches to numbers (e.g., ３０度 = 30 degrees)."
+どう,どう,how,Adverb,-,-,-,-,
+所,ところ,place,Noun,ところです,ところで,ところじゃない,ところだった,
+トマト,トマト,tomato,Noun,トマトです,トマトで,トマトじゃない,トマトだった,
+鶏肉,とりにく,chicken,Noun,鶏肉です,鶏肉で,鶏肉じゃない,鶏肉だった,
+なす,なす,eggplant,Noun,なすです,なすで,なすじゃない,なすだった,
+夏,なつ,summer,Noun,夏です,夏で,夏じゃない,夏だった,
+何か,なにか,something,Noun,何かです,何かで,何かじゃない,何かだった,
+～について,～について,about...; concerning...,Phrase,-,-,-,-,"Particle phrase attached to a noun (e.g., 日本について = about Japan)."
+にんじん,にんじん,carrot,Noun,にんじんです,にんじんで,にんじんじゃない,にんじんだった,
+パーティー,パーティー,party,Noun,パーティーです,パーティーで,パーティーじゃない,パーティーだった,
+バーベキュー,バーベキュー,barbecue,Noun,バーベキューです,バーベキューで,バーベキューじゃない,バーベキューだった,
+はし,はし,chopsticks,Noun,はしです,はしで,はしじゃない,はしだった,Written 箸 for chopsticks in kanji.
+始める,はじめる,To begin,Ru-Verb (Trans),始めます,始めて,始めない,始めた,Transitive; 始まる is the intransitive counterpart.
+話,はなし,story / talk,Noun,話です,話で,話じゃない,話だった,
+ハラルフード,ハラルフード,halal,Noun,ハラルフードです,ハラルフードで,ハラルフードじゃない,ハラルフードだった,
+晴れ,はれ,sunny weather,Noun,晴れです,晴れで,晴れじゃない,晴れだった,
+ピーナッツ,ピーナッツ,peanut,Noun,ピーナッツです,ピーナッツで,ピーナッツじゃない,ピーナッツだった,
+袋,ふくろ,bag / sack / plastic/paper bag,Noun,袋です,袋で,袋じゃない,袋だった,
+豚肉,ぶたにく,pork,Noun,豚肉です,豚肉で,豚肉じゃない,豚肉だった,
+ぶどう,ぶどう,grape,Noun,ぶどうです,ぶどうで,ぶどうじゃない,ぶどうだった,
+冬,ふゆ,winter,Time,-,-,-,-,
+降る（雨/雪が）,ふる（あめ/ゆきが）,(rain/snow) falls,U-Verb (Intrans),降ります,降って,降らない,降った,Use with 雨が/雪が; intransitive u-verb.
+風呂,ふろ,bath,Noun,風呂です,風呂で,風呂じゃない,風呂だった,Often used as お風呂 for polite speech.
+風呂に入る,ふろにはいる,to take a bath,U-Verb (Intrans),風呂に入ります,風呂に入って,風呂に入らない,風呂に入った,Exception: 入る looks like a Ru-verb but conjugates as a U-verb.
+下手,へた,clumsy / poor at ...,Na-Adjective,下手です,下手で,下手じゃない,下手だった,
+ホームステイ,ホームステイ,homestay / living with a local family,Noun,ホームステイです,ホームステイで,ホームステイじゃない,ホームステイだった,
+毎週,まいしゅう,every week,Time,-,-,-,-,
+まず,まず,first of all,Adverb,-,-,-,-,
+まだ ＋ negative,まだ ＋ negative,not ... yet,Adverb,-,-,-,-,"Used with negative verb forms (e.g., まだ〜ない)."
+みかん,みかん,mandarin orange,Noun,みかんです,みかんで,みかんじゃない,みかんだった,
+みんなで,みんなで,all (of the people) together,Phrase,-,-,-,-,
+持っていく,もっていく,to take (a thing),U-Verb (Trans),持っていきます,持っていって,持っていかない,持っていった,Compound: 持つ (持って) + 行く.
+もも,もも,peach,Noun,ももです,ももで,ももじゃない,ももだった,
+有名,ゆうめい,famous,Na-Adjective,有名です,有名で,有名じゃない,有名だった,
+料理する,りょうりする,To cook,Noun (Suru),料理します,料理して,料理しない,料理した,Suru-verb (する verb). 料理 (noun) means 'cooking' or 'cuisine'.
+りんご,りんご,apple,Noun,りんごです,りんごで,りんごじゃない,りんごだった,Can also be written 林檎 (less common).
